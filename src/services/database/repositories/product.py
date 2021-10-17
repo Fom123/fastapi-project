@@ -15,7 +15,6 @@ class ProductRepository(BaseRepository[Product]):
                           name: str,
                           unit_price: typing.Union[float, Decimal],
                           size: SizeEnum,
-                          product_id: typing.Optional[int] = None,
                           description: typing.Optional[str] = None,
                           created_at: typing.Optional[datetime] = None
                           ) -> Model:

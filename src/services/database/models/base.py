@@ -26,6 +26,10 @@ ASTERISK = "*"
 class Base(metaclass=DeclarativeMeta):
     """Declarative meta for mypy"""
 
+    def __init__(self, *args, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
     __abstract__ = True
     __mapper_args__ = {"eager_defaults": True}
 
