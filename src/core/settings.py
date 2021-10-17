@@ -112,7 +112,7 @@ class FastAPISettings(BaseSettings):
 
 class RedisSettings(BaseSettings):
     REDIS_HOST: str = Field(..., env="REDIS_HOST")
-    REDIS_PASSWORD: str = Field(..., env="REDIS_PASSWORD")
+    REDIS_PASSWORD: Optional[str] = Field(None, env="REDIS_PASSWORD")
 
     class Config:
         env_file = ENV_PATH
